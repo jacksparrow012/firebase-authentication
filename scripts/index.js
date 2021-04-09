@@ -1,3 +1,16 @@
+auth.onAuthStateChanged(user => {
+    console.log(user.email)
+    if (user) {
+        let users = document.querySelector("#user")
+        users.textContent = `user logged in as ${user.email}`
+    } else {
+        let users = document.querySelector("#user")
+        users.textContent = "user logged out"
+
+    }
+})
+
+
 
 // setup materialize components
 document.addEventListener('DOMContentLoaded', function () {
@@ -20,7 +33,7 @@ signupForm.addEventListener("submit", (e) => {
     const password = signupForm["signup-password"].value;
     ////Sign up the users
     auth.createUserWithEmailAndPassword(email, password).then(cred => {
-        console.log(cred.user.uid);
+        // console.log(cred.user.uid);
         const modal = document.querySelector("#modal-signup");
         M.Modal.getInstance(modal).close();
         signupForm.reset();
@@ -42,9 +55,11 @@ loginForm.addEventListener("click", (e) => {
     const email = loginForm["login-email"].value;
     const password = loginForm["login-password"].value;
     auth.signInWithEmailAndPassword(email, password).then(cred => {
-        console.log(cred.user.uid)
+        // console.log(cred.user.uid)
         const modal = document.querySelector("#modal-login");
         M.Modal.getInstance(modal).close();
         loginForm.reset();
+    }).catch((e) => {
+        console.log(e.message)
     })
 })
