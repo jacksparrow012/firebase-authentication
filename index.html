@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible"
         content="IE=edge">
@@ -11,12 +10,12 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <title>Game Guidez</title>
+  <title>Document</title>
 </head>
 
-<body class="grey lighten-3">
-  <!---Nav start-->
-  <nav class="z-depth-0 grey lighten-2">
+<body>
+  <!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
     <div class="nav-wrapper container">
       <a href="#"
          class="brand-logo">
@@ -54,7 +53,7 @@
       </ul>
     </div>
   </nav>
-  <!----Nav End-->
+
   <!-- SIGN UP MODAL -->
   <div id="modal-signup"
        class="modal">
@@ -77,7 +76,6 @@
       </form>
     </div>
   </div>
-  <!---Sign up modal end-->
 
   <!-- LOGIN MODAL -->
   <div id="modal-login"
@@ -101,7 +99,6 @@
       </form>
     </div>
   </div>
-  <!-----log in moda end-->
 
   <!-- ACCOUNT MODAL -->
   <div id="modal-account"
@@ -109,9 +106,10 @@
     <div class="modal-content center-align">
       <h4>Account details</h4><br />
       <div class="account-details"></div>
+      <div class="account-extras"></div>
     </div>
   </div>
-  <!-----acount modal end-->
+
   <!-- CREATE GUIDE MODAL -->
   <div id="modal-create"
        class="modal">
@@ -134,8 +132,8 @@
       </form>
     </div>
   </div>
-  <!-- CREATE GUIDE MODAL end-->
-  <!-- GUIDE LIST Start -->
+
+  <!-- GUIDE LIST -->
   <div class="container"
        style="margin-top: 40px;">
     <ul class="collapsible z-depth-0 guides"
@@ -158,16 +156,36 @@
       </li>
     </ul>
   </div>
-  <!-------Guide list end-->
+
   <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAbtUtQu-7mhy2wHnNQ7DWwJFybywDIjxY",
+      authDomain: "net-ninja-guidez-game.firebaseapp.com",
+      projectId: "net-ninja-guidez-game",
+      storageBucket: "net-ninja-guidez-game.appspot.com",
+      messagingSenderId: "775482219810",
+      appId: "1:775482219810:web:100baf386a8c992d9a197b",
+      measurementId: "G-BZ24KCDV7T"
+    };
+    firebase.initializeApp(config);
+
+    // make auth and firestore references
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // update firestore settings
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+  <!-- Compiled and minified JavaScript -->
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="scripts/auth.js"
-          type="module"></script>
+  <script src="scripts/auth.js"></script>
   <script src="scripts/index.js"></script>
-  <script src="firebase.js"></script>
+</body>
 </body>
 
 </html>
