@@ -10,6 +10,7 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
   <title>Document</title>
 </head>
 
@@ -24,27 +25,32 @@
       </a>
       <ul id="nav-mobile"
           class="right hide-on-med-and-down">
-        <li class="logged-in">
+        <li class="logged-in"
+            style="display: none;">
           <a href="#"
              class="grey-text modal-trigger"
              data-target="modal-account">Account</a>
         </li>
-        <li class="logged-in">
+        <li class="logged-in"
+            style="display: none;">
           <a href="#"
              class="grey-text"
              id="logout">Logout</a>
         </li>
-        <li class="logged-in">
+        <li class="logged-in"
+            style="display: none;">
           <a href="#"
              class="grey-text modal-trigger"
              data-target="modal-create">Create Guide</a>
         </li>
-        <li class="logged-out">
+        <li class="logged-out"
+            style="display: none;">
           <a href="#"
              class="grey-text modal-trigger"
              data-target="modal-login">Login</a>
         </li>
-        <li class="logged-out">
+        <li class="logged-out"
+            style="display: none;">
           <a href="#"
              class="grey-text modal-trigger"
              data-target="modal-signup">Sign up</a>
@@ -53,7 +59,7 @@
       </ul>
     </div>
   </nav>
-  <span>User:</span> <span id="user"></span>
+
   <!-- SIGN UP MODAL -->
   <div id="modal-signup"
        class="modal">
@@ -72,6 +78,36 @@
                  required />
           <label for="signup-password">Choose password</label>
         </div>
+        <div class="input-field">
+          <input type="text"
+                 name=""
+                 id="signup-bio"
+                 required />
+          <label for="signup-bio">One line biio </label>
+        </div>
+        <!-------extra start-->
+        <div class="input-field">
+          <input type="number"
+                 name=""
+                 id="age"
+                 required />
+          <label for="age">Age </label>
+        </div>
+        <div class="input-field">
+          <input type="text"
+                 name=""
+                 id="firstname"
+                 required />
+          <label for="firstname">Firstname </label>
+        </div>
+        <div class="input-field">
+          <input type="text"
+                 name=""
+                 id="lastname"
+                 required />
+          <label for="lastname"> Lastname</label>
+        </div>
+        <!------extra end-->
         <button class="btn yellow darken-2 z-depth-0">Sign up</button>
       </form>
     </div>
@@ -138,22 +174,7 @@
        style="margin-top: 40px;">
     <ul class="collapsible z-depth-0 guides"
         style="border: none;">
-      <li>
-        <div class="collapsible-header grey lighten-4">Guide title</div>
-        <div class="collapsible-body white">Lorem ipsum dolor sit amet.</div>
-      </li>
-      <li>
-        <div class="collapsible-header grey lighten-4">Guide title</div>
-        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-      <li>
-        <div class="collapsible-header grey lighten-4">Guide title</div>
-        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-      <li>
-        <div class="collapsible-header grey lighten-4">Guide title</div>
-        <div class="collapsible-body white"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
+
     </ul>
   </div>
 
